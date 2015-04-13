@@ -1,27 +1,13 @@
-/* Palette URL: http://paletton.com/#uid=13z0u0k7sYLqRKvmjo7mOavm224 */
+/* Palette URL: http://paletton.com/#uid=30x0g0kl-kRb4vogspYqQf--c9h */
 
-/* As hex codes */
-.hex-0 { color: #C3DFF9 }
-.hex-1 { color: #2E84D1 }
-.hex-2 { color: #2C567C }
-.hex-3 { color: #122536 }
-.hex-4 { color: #04070B }
+.sc--back-1 {
+    background-color: #476687;
+}
 
-.hex-back-0 { background-color: #C3DFF9 }
-.hex-back-1 { background-color: #2E84D1 }
-.hex-back-2 { background-color: #2C567C }
-.hex-back-3 { background-color: #122536 }
-.hex-back-4 { background-color: #04070B }
+.sc--back-2 {
+    background-color: #448C71;   
+}
 
-/* As RGBa codes */
-.rgba-0 { color: rgba(195,223,249,1) }
-.rgba-1 { color: rgba( 46,132,209,1) }
-.rgba-2 { color: rgba( 44, 86,124,1) }
-.rgba-3 { color: rgba( 18, 37, 54,1) }
-.rgba-4 { color: rgba(  4,  7, 11,1) }
-
-.rgba-back-0 { background-color: rgba(195,223,249,1) }
-.rgba-back-1 { background-color: rgba( 46,132,209,1) }
-.rgba-back-2 { background-color: rgba( 44, 86,124,1) }
-.rgba-back-3 { background-color: rgba( 18, 37, 54,1) }
-.rgba-back-4 { background-color: rgba(  4,  7, 11,1) }
+.sc--back-3 {
+    background-color: #CF9865;
+}
