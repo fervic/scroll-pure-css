@@ -14,7 +14,7 @@ top of it.
 **Selector prefixes**
 * `a--` = action
 * `a-s--` = action & style (alphabetically sorted)
-* `n--` = anchor navigation
 * `s--` = style
 * `sc--` = style color
+* ids with no prefix = anchor navigation
 
