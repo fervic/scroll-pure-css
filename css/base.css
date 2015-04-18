@@ -71,3 +71,28 @@ main {
 section {
     padding: 4em 1em 2em 1em;
 }
+
+
+/* Background images */
+.s--back-img-1 {
+    background-image: url("http://placehold.it/2000x1200/476687/B89978.png");
+}
+
+.s--back-img-2 {
+    background-image: url("http://placehold.it/2000x1200/448C71/BB738E.png");
+}
+
+.s--back-img-3 {
+    background-image: url("http://placehold.it/2000x1200/CF9865/30679A.png");
+}
+
+.s--back-parallax {
+    background-attachment: fixed;    
+    background-repeat: repeat;    
+
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+}
+
