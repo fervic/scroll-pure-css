@@ -17,13 +17,13 @@ body {
 .s--container {
     margin-left: auto;
     margin-right: auto;
-    width: 1200px; 
+    max-width: 1200px; 
 }
 
 
 /* Header with logo */
 header {
-    height: 3em;
+    height: 5em;
     padding: .5em 1em;
 }
 
@@ -86,7 +86,7 @@ section {
     background-image: url("http://placehold.it/2000x1200/CF9865/30679A.png");
 }
 
-.s--back-parallax {
+.a-s--back-parallax {
     background-attachment: fixed;    
     background-repeat: repeat;    
 

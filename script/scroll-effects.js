@@ -63,7 +63,16 @@ function hideHomeOption(){
 //------------------------------------------------------------------------------
 // Parallax effects
 
-
+function applyParallaxEffect(){
+  $(".a-s--back-parallax").each(function(){
+    var $background = $(this);
+    var speed = $background.data("parallax-speed");
+    if(speed){
+      var yPos = -($(window).scrollTop() / speed);
+      $background.css({backgroundPositionY: yPos});
+    } 
+  });
+}
 
 
 //------------------------------------------------------------------------------
@@ -72,7 +81,6 @@ function hideHomeOption(){
 $(document).ready(function(){
   // Initial settings
   resizeSections();
-  setBackgroundImagesForOldIE();
 
   // Attach event handlers
   $(window).resize(function() {
@@ -81,10 +89,7 @@ $(document).ready(function(){
 
   $(window).scroll(function() {
     fixateOrReleaseNav();
+    applyParallaxEffect();
   });
-
-
 });
-
-
 
