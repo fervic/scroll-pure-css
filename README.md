@@ -5,15 +5,20 @@ top of it.
 
 ### Features
 * Uses [Pure.css](http://purecss.io).
-* Implements both, the [Landing Page](http://purecss.io/layouts/marketing/) and [Responsive Horizontal-to-Vertical Menu](http://purecss.io/layouts/tucked-menu-vertical/) layouts.
+* Implements [Responsive Horizontal-to-Vertical Menu](http://purecss.io/layouts/tucked-menu-vertical/) layouts.
+* Scroll effects
+  * Fixed menu bar.
+  * Scroll spy.
+  * Smooth scrolling.
+  * Parallax.
 * HTML5 tags.
-* Scroll spy and smooth scrolling effects with minimalist jQuery code.
 * Suggested image sizes using [PLACEHOLD.IT](http://placehold.it)
+* Gibberish random text courtesy of [randomtext](http://randomtext.me)
 
 ### Conventions
 **Selector prefixes**
 * `a--` = action
-* `a-s--` = action & style (alphabetically sorted)
+* `a-s--` = action & style
 * `s--` = style
 * `sc--` = style color
 * ids with no prefix = anchor navigation
