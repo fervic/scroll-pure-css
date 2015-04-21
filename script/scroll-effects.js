@@ -27,6 +27,7 @@ function resizeSections() {
   cache(".a--resize").css("min-height", $(window).height())
 }
 
+
 //------------------------------------------------------------------------------
 // Fixating the navigtion bar
 
@@ -34,9 +35,11 @@ function fixateOrReleaseNav(){
   var relativeTop = cache("nav").position().top - $(window).scrollTop();
 
   if (relativeTop <= 0){
-    fixateNav();  
+    fixateNav();
+    attachNav();
   } else {
     releaseNav();
+    detachNav();
   }
 }
 
@@ -48,19 +51,19 @@ function releaseNav(){
   cache("#a-s--menu").removeClass("s--fixed");
 }
 
+
 //------------------------------------------------------------------------------
 // Attaching the navigtion bar
 
 function attachOrDetachNav(){
-  var $splash = cache('#splash');
-  var fullSplashHeight = $splash.outerHeight() + $splash.offset().top;
+  var $home = cache('#home');
+  var fullHomeHeight = $home.outerHeight() + $home.offset().top;
 
-  if(fullSplashHeight <= $(window).scrollTop()){
+  if(fullHomeHeight <= $(window).scrollTop()){
     attachNav();
   } else {
     detachNav();
   }
-
 }
 
 function attachNav(){
@@ -99,10 +102,75 @@ function applyParallaxEffect(){
   $(".a-s--back-parallax").each(function(){
     var $background = $(this);
     var speed = $background.data("parallax-speed");
-    if(speed){
+    if (speed){
       var yPos = -($(window).scrollTop() / speed);
       $background.css({backgroundPositionY: yPos});
     } 
+  });
+}
+
+
+//------------------------------------------------------------------------------
+// Scroll spy effect
+
+function scrollSpy(){
+  if ($.spyOnScroll) {
+    var lastId;
+
+    // All menu items
+    var $menuItems = cache("#a-s--menu").find("a[href*=#]:not([href=#])")
+
+    // Anchors corresponding to menu items
+    var scrollItems = $menuItems.map(function(){
+      var $item = $($(this).attr("href"));
+      if ($item.length) { return $item; }
+    });
+
+    // Current section
+    var windowScrollTop = $(window).scrollTop() + 1
+    var current = scrollItems.map(function(){
+      if($(this).offset().top <= windowScrollTop){ return this; }
+    });
+    current = current[current.length - 1]
+
+    // Get the id
+    var id = current && current.length ? current[0].id : "";
+
+    if (lastId !== id) {
+      $menuItems.removeClass("s--selected");
+      $menuItems.filter("[href=#"+id+"]").addClass("s--selected");
+      updateUrlHash(id);
+    }
+  }
+}
+
+function updateUrlHash(newHash){
+  if(history.replaceState) {
+    history.replaceState(null, null, "#" + newHash);
+  }
+  else {
+    window.location.hash = newHash;
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// Smooth scroll effect
+
+function menuAction($item){
+  var href = $item.attr('href');
+
+  // First update the hash to preserve browser's back and forward
+  var scrollMem = $(document).scrollTop();
+  window.location.hash = href;
+  $(document).scrollTop(scrollMem);
+
+  $.spyOnScroll = false;
+  $("html, body").animate({
+    scrollTop: $(href).offset().top
+  }, 500, function () {
+    $.spyOnScroll = true;
+    scrollSpy();
   });
 }
 
@@ -112,6 +180,7 @@ function applyParallaxEffect(){
 
 $(document).ready(function(){
   // Initial settings
+  $.spyOnScroll = true;
   resizeSections();
 
   // Attach event handlers
@@ -121,8 +190,15 @@ $(document).ready(function(){
 
   $(window).scroll(function() {
     fixateOrReleaseNav();
-    attachOrDetachNav();
+    //attachOrDetachNav();
     applyParallaxEffect();
+    scrollSpy();
   });
+
+  $(document).on("click", "a[href*=#]:not([href=#])", function(e) {
+    e.preventDefault();
+    menuAction($(this));
+  });
+
 });
 

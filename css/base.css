@@ -51,17 +51,17 @@ header {
 
 
 /* Menu */
-#a-s--menu ul{
+#a-s--menu ul {
     margin-top: 1em;
     z-index: 15;
 }
 
-#a-s--menu li{
+#a-s--menu li {
     margin-right: 0.4em;
     margin-top: 0.2em;
 }
 
-#a-s--menu li a{
+#a-s--menu li a {
     background-color: transparent;
     background-color: rgba(255,255,255,0.2);
     border-radius: 3px;
@@ -88,7 +88,7 @@ header {
 }
 
 
-/* Menu (when fixed and attached) */
+/* Menu (when attached) */
 #a-s--menu.s--attached {
     background-color: rgba(0,0,0,0.3);
     padding-top: 0;
@@ -96,32 +96,24 @@ header {
     z-index: 10;
 }
 
-#a-s--menu.s--attached ul{
+#a-s--menu.s--attached ul {
     margin-top: 0;
 }
 
-#a-s--menu.s--attached li{
+#a-s--menu.s--attached li {
     margin: 0;
 }
 
-#a-s--menu.s--attached li a{
+#a-s--menu.s--attached a {
     background-color: transparent;
-    background-color: rgba(255,255,255,0.2);
-    border-bottom: solid transparent 2px;
+    border-bottom: solid transparent 0.3em;
     border-radius: 0;
     margin-bottom: 1px; /* minor correction */
-    color: #FFFFFF;
-    color: rgba(255,255,255,0.8);
     font-size: 1.1em;
 }
 
-#a-s--menu.s--attached li a:hover, a:focus {
+#a-s--menu.s--attached a:hover, a:focus {
     color: #FFFFFF;
-}
-
-#a-s--menu.s--attached pure-menu-selected a.pure-menu-link {
-    color: white;
-    background-color: #122536; /* hex-3 */
 }
 
 
@@ -136,23 +128,23 @@ section {
     padding: 4em 1em 2em 1em;
 }
 
-section#splash {
+section#home {
     padding-top: 9em;
 }
 
-section#splash h1,h2,h3,h4,h5,h6,p {
+section#home h1,h2,h3,h4,h5,h6,p {
     font-weight: lighter;
 }
 
-section#splash h1 {
+section#home h1 {
     font-size: 2.4em;
 }
 
-section#splash h2 {
+section#home h2 {
     font-size: 2.0em;
 }
 
-section#splash p {
+section#home p {
     font-size: 1.3em;
 }
 

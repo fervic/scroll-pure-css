@@ -22,6 +22,7 @@
   
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/palette.css">
+  <link rel="stylesheet" href="css/custom.css">
 
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="css/old-ie-specific.css">
@@ -44,7 +45,7 @@
   <body>
     <header id="top">
       <div class="s--container">
-        <a id="a-s--logo" class="s--fixed s--floating" href="#">
+        <a id="a-s--logo" class="s--fixed" href="#">
           <h1 class="hidden">Main Header</h1>
           <img src="http://placehold.it/200x64.png" alt="Main Header">
         </a>
@@ -55,19 +56,20 @@
       <div id="a-s--menu" class="pure-menu pure-menu-horizontal">
           <div class="s--container">
           <ul class="pure-menu-list s--right">
-            <li class="pure-menu-item pure-menu hidden">
-              <a href="#top" class="pure-menu-link">
+            <!-- These comments prevent the spacing
+            --><li class="pure-menu-item pure-menu hidden">
+              <a href="#home" class="pure-menu-link a-s--option-home">
                 <span class="hidden">Home</span><i class="fa fa-home"></i>
               </a>
-            </li>
-            <li class="pure-menu-item">
-              <a href="#news" class="pure-menu-link"> News</a>
-            </li>
-            <li class="pure-menu-item">
-              <a href="#sports" class="pure-menu-link">Sports</a>
-            </li>
-            <li class="pure-menu-item">
-              <a href="#weather" class="pure-menu-link">Weather</a>
+            </li><!--
+            --><li class="pure-menu-item">
+              <a href="#news" class="pure-menu-link a-s--option-news">News</a>
+            </li><!--
+            --><li class="pure-menu-item">
+              <a href="#sports" class="pure-menu-link a-s--option-sports">Sports</a>
+            </li><!--
+            --><li class="pure-menu-item">
+              <a href="#weather" class="pure-menu pure-menu-link a-s--option-weather">Weather</a>
             </li>
           </ul>
           </div>
@@ -75,7 +77,7 @@
     </nav>
 
     <main>
-      <section id="splash" class="a--resize sc--back-1 s--back-img-1 a-s--back-parallax" data-parallax-speed="10">
+      <section id="home" class="a--resize sc--back-1 s--back-img-1 a-s--back-parallax" data-parallax-speed="10">
         <div class="s--container">
           <h1>Hey over lazy alas hatchet on because stupidly iguana hey fled
           ouch jeepers that wildly</h1>
