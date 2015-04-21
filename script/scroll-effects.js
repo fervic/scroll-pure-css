@@ -35,28 +35,60 @@ function fixateOrReleaseNav(){
 
   if (relativeTop <= 0){
     fixateNav();  
-  } else if (relativeTop > 0){
+  } else {
     releaseNav();
   }
 }
 
 function fixateNav(){
-  var menu = cache("#a-s--menu");
-  menu.addClass("s--fixed");
-  //cache("nav").height(menu.outerHeight());
-  showHomeOption();
+  cache("#a-s--menu").addClass("s--fixed");
 }
 
 function releaseNav(){
   cache("#a-s--menu").removeClass("s--fixed");
-  //cache("nav").css("height", "");
+}
+
+//------------------------------------------------------------------------------
+// Attaching the navigtion bar
+
+function attachOrDetachNav(){
+  var $splash = cache('#splash');
+  var fullSplashHeight = $splash.outerHeight() + $splash.offset().top;
+
+  if(fullSplashHeight <= $(window).scrollTop()){
+    attachNav();
+  } else {
+    detachNav();
+  }
+
+}
+
+function attachNav(){
+  cache("#a-s--menu").addClass("s--attached");
+  hideLogo();
+  showHomeOption();
+}
+
+function detachNav(){
+  cache("#a-s--menu").removeClass("s--attached");
+  showLogo();
   hideHomeOption();
 }
 
+function showLogo(){
+  cache("#a-s--logo").removeClass('hidden');
+}
+
+function hideLogo(){
+  cache("#a-s--logo").addClass('hidden');
+}
+
 function showHomeOption(){
+  cache("li.pure-menu-item").first().removeClass('hidden');
 }
 
 function hideHomeOption(){
+  cache("li.pure-menu-item").first().addClass('hidden');
 }
 
 
@@ -89,6 +121,7 @@ $(document).ready(function(){
 
   $(window).scroll(function() {
     fixateOrReleaseNav();
+    attachOrDetachNav();
     applyParallaxEffect();
   });
 });
