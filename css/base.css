@@ -9,7 +9,17 @@
 
 /* Defaults */
 body {
-  color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+
+/* Shared */
+.s--fixed {
+    position: fixed;
+}
+
+.s--right {
+    float: right;
 }
 
 
@@ -29,7 +39,6 @@ header {
 
 #s--logo {
     height: 2em;
-    position: fixed;
     /* z-index: -10; */
 }
 
@@ -39,20 +48,27 @@ header {
 
 
 /* Menu */
-#a-s--menu {
-    padding-top: 0.5em;
-}
-
-#a-s--menu.fixed {
-    padding-top: 0;
-    position: fixed;
-    top: 0;
+#a-s--menu ul{
+    margin-top: 1em;
     z-index: 10;
 }
 
-#a-s--menu a.pure-menu-link {
-    font-size: 1.5em;
-    color: white;
+#a-s--menu li{
+    margin-right: 0.4em;
+    margin-top: 0.2em;
+}
+
+#a-s--menu li a{
+    background-color: transparent;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    color: #FFFFFF;
+    color: rgba(255,255,255,0.8);
+    font-size: 1.3em;
+}
+
+#a-s--menu li a:hover, a:focus {
+    color: #FFFFFF;
 }
 
 #a-s--menu pure-menu-selected a.pure-menu-link {
@@ -60,21 +76,58 @@ header {
     background-color: #122536; /* hex-3 */
 }
 
-#a-s--menu li a:hover,
-#a-s--menu li a:focus {
-    background-color: #2E84D1; /* hex-1 */
+
+/* Menu (when fixed) */
+#a-s--menu.s--fixed {
+    background-color: rgba(0,0,0,0.3);
+    padding-top: 0;
+    top: 0;
+    z-index: 10;
+}
+
+#a-s--menu.s--fixed ul{
+    margin-top: 0;
+    z-index: 10;
+}
+
+#a-s--menu.s--fixed li{
+    margin: 0;
+}
+
+#a-s--menu.s--fixed li a{
+    background-color: transparent;
+    background-color: rgba(255,255,255,0.2);
+    border-bottom: solid transparent 2px;
+    border-radius: 0;
+    margin-bottom: 1px; /* minor correction */
+    color: #FFFFFF;
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1em;
+}
+
+#a-s--menu.s--fixed li a:hover, a:focus {
+    color: #FFFFFF;
+}
+
+#a-s--menu.s--fixed pure-menu-selected a.pure-menu-link {
+    color: white;
+    background-color: #122536; /* hex-3 */
 }
 
 
 /* Main content */
 main {
     background-color: white;
-    overflow: auto;
+    /* overflow: auto; */
     position: relative;
 }
 
 section {
     padding: 4em 1em 2em 1em;
+}
+
+section#splash {
+    padding-top: 9em;
 }
 
 section#splash h1,h2,h3,h4,h5,h6,p {
@@ -96,15 +149,15 @@ section#splash p {
 
 /* Background images */
 .s--back-img-1 {
-    background-image: url("http://placehold.it/2000x1200/476687/B89978.png");
+    background-image: url("http://placehold.it/2000x1200/6F88A3/B89978.png");
 }
 
 .s--back-img-2 {
-    background-image: url("http://placehold.it/2000x1200/448C71/BB738E.png");
+    background-image: url("http://placehold.it/2000x1200/6FA993/BB738E.png");
 }
 
 .s--back-img-3 {
-    background-image: url("http://placehold.it/2000x1200/CF9865/30679A.png");
+    background-image: url("http://placehold.it/2000x1200/FACDA4/30679A.png");
 }
 
 .a-s--back-parallax {

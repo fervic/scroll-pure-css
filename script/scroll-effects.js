@@ -42,14 +42,14 @@ function fixateOrReleaseNav(){
 
 function fixateNav(){
   var menu = cache("#a-s--menu");
-  menu.addClass("fixed");
-  cache("nav").height(menu.outerHeight());
+  menu.addClass("s--fixed");
+  //cache("nav").height(menu.outerHeight());
   showHomeOption();
 }
 
 function releaseNav(){
-  cache("#a-s--menu").removeClass("fixed");
-  cache("nav").css("height", "");
+  cache("#a-s--menu").removeClass("s--fixed");
+  //cache("nav").css("height", "");
   hideHomeOption();
 }
 
